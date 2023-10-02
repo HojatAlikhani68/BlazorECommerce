@@ -1,3 +1,4 @@
+global using BlazorECommerce.Shared.Entities;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,9 +26,7 @@ app.UseHttpsRedirection();
 
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 
 app.MapRazorPages();
 app.MapControllers();
