@@ -8,10 +8,9 @@ namespace BlazorECommerce.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        public ProductController(ILogger<ProductController> logger,DataContext dataContext)
+        public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
-            _dataContext = dataContext;
         }
         private static List<Product> Products = new List<Product>
          {
@@ -42,13 +41,11 @@ namespace BlazorECommerce.Server.Controllers
 
     };
         private readonly ILogger<ProductController> _logger;
-        private readonly DataContext _dataContext;
 
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            var res = await _dataContext.Products.ToListAsync();
-            return Ok(res);             
+            return Ok(Products);             
         }
 
     }

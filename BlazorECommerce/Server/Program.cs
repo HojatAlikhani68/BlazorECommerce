@@ -39,6 +39,6 @@ app.UseRouting();
 app.MapRazorPages();
 app.MapControllers();
 app.UseSwagger();
-app.MapFallbackToFile("swagger/index.html");
+app.MapFallbackToFile("index.html");
 
 app.Run();
